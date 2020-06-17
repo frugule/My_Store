@@ -1,18 +1,33 @@
 <template>
-    <div class="">
+    <div class="hero">
       <!--Formulario-->
-      <div class="">
-        <div class="container pa-5">
-          <input type="text" v-model="name" placeholder="Ingrese el Producto">
-          <br>
-          <input type="number" v-model="price" placeholder="Ingre el Valor">
-          <br>
-          <input type="text" v-model="picture" name="" id="" placeholder="Ingrese la Imagen">
+      <div class="column is-half is-offset-one-quarter">
+        <div class="container py-5">
+          <div class="title is-1">
+            <h1>Agregar Productos</h1>
+          </div>
+          <div class="container py-3">
+            <input class="input is-primary" type="text" v-model="name" placeholder="Ingrese el Producto">
+          </div>
+          <div class="container py-3">
+            <input class="input is-warning" prefix="$" v-model="price" placeholder="Ingre el Valor">
+          </div>
+          <div class="container py-3">
+            <input class="input is-danger" type="text" v-model="picture" placeholder="Ingrese el URL de la Imagen">
+          </div>
+          
         </div>
-        <button class="" @click="createProduct">Añadir</button>
-        <button v-if="edit" @click="updateProduct(id)">Actualizar</button>
+
+        <div class="columns pb-4">
+          <div class="px-3">
+            <button class="button is-info" @click="createProduct">Añadir</button>
+          </div>
+          <div class="px-3">
+            <button class="button is-warning" v-if="edit" @click="updateProduct(id)">Actualizar</button>
+          </div>
+        </div>
       </div>
-      <div class="container mx-auto">
+      <div class="container">
         <table class="table">
            <thead>
             <tr>
@@ -28,12 +43,12 @@
               <td>{{ p.data.price }}</td>
               <td>{{ p.data.picture.substring(0,50) }}</td>
               <td>
-                <button class="button btn-success" @click="editProduct(p.id)">Editar</button>
+                <button class="button is-primary is-light" @click="editProduct(p.data.id)">Editar</button>
                 <!-- @click="editItem(p['.key'])"  -->
                 <div class="is-clearfix"></div>
               </td>
               <td>
-                <button class="button btn-danger" @click="deleteProduct(p.id)">Borrar</button>
+                <button class="button is-danger is-light" @click="deleteProduct(p.id)">Borrar</button>
                   <!-- @click="deleteItem(p['.key'])" -->
                 <div class="is-clearfix"></div>
               </td>
@@ -137,3 +152,4 @@ export default {
 
 }
 </script>
+

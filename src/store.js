@@ -136,10 +136,7 @@ export default new Vuex.Store({
       //Aqui van 2 "mutaciones"
       commit('LOADING_PRODUCTS')
       //carga o no carga info
-      axios.get('https://us-central1-tddg3-8aad7.cloudfunctions.net/products/products', {
-          headers: {
-            "Content-type": "text/plain"
-          }
+      axios.get('https://us-central1-tddg3-8aad7.cloudfunctions.net/products/products', {headers: {"Content-type": "text/plain"}
         }).then((accept) => {
         let data = accept.data;
         commit('GET_PRODUCTS', data)
