@@ -43,7 +43,7 @@
               <td>{{ p.data.price }}</td>
               <td>{{ p.data.picture.substring(0,50) }}</td>
               <td>
-                <button class="button is-primary is-light" @click="editProduct(p.data.id)">Editar</button>
+                <button class="button is-primary is-light" @click="editProduct(p.id)">Editar</button>
                 <!-- @click="editItem(p['.key'])"  -->
                 <div class="is-clearfix"></div>
               </td>
@@ -83,7 +83,7 @@ export default {
           price: this.price
         }
         console.log(lapa)
-        axios.post('https://us-central1-tddg3-8aad7.cloudfunctions.net/products/product', lapa, {headers:{'content-type':'aplication/json'}})
+        axios.post('https://us-central1-tddg3-8aad7.cloudfunctions.net/products/product', lapa, {headers:{'content-type':'application/json'}})
         .then((response) => {
           console.log(response);
           this.$store.dispatch('getProducts')
