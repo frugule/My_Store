@@ -27,7 +27,7 @@
         </div>
       </div>
     </section>
-    <div class="columns is-multiline">
+    <div class="columns is-multiline py-4 px-2">
       <div class="column is-4" v-for="p in computedProductList" :key="p.id">
         <!-- Item -->
         <div class="card has-equal-height">
