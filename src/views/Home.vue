@@ -2,6 +2,7 @@
   <div class="container">
     <cart-detail/>
     <products-list/>
+    
   </div>
 </template>
 

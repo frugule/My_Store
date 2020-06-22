@@ -65,13 +65,13 @@ import axios from 'axios'
 import {mapState, mapActions} from 'vuex'
 
 export default {
-    data(){
-        return{
-            name: '',
-            picture: '',
-            price: '',
-            id: undefined
-        }
+  data(){
+    return{
+      name: '',
+      picture: '',
+      price: '',
+      id: undefined
+    }
 
     },
     methods: {

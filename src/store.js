@@ -91,7 +91,9 @@ export default new Vuex.Store({
     },
     UPDATE_EDIT(state){
       state.edit = !state.edit
-    }
+    },
+    OVERLAY_ON(state){state.overlay = true},
+    OVERLAY_OFF(state){state.overlay = false}
   },
   actions: {
     // User
